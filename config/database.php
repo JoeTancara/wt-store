@@ -1,9 +1,9 @@
 <?php
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'joewt');
+define('DB_USER', 'u971224597_joewt');
 define('DB_PASS', 'technological.world.dev@gmail.com+*+*+*+*+*WT7');
-define('DB_NAME', 'wtstore');
+define('DB_NAME', 'u971224597_wtstore');
 //define('DB_NAME', 'catalogo_db');
 define('BASE_URL', 'https://store.technologicalworld.website');
 //define('BASE_URL', 'http://localhost/store');
