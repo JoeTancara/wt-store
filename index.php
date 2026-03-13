@@ -146,7 +146,7 @@ include __DIR__ . '/views/partials/header_public.php';
             <?php endif; ?>
             <div class="d-flex align-items-end justify-content-between mt-auto pt-2">
               <div>
-                <div class="product-card-price">Bs <?= number_format($prod['precio'], 2) ?></div>
+                <!-- <div class="product-card-price">Bs <?= number_format($prod['precio'], 2) ?></div> -->
                 <?php
                   $stockClass = (int)$prod['stock'] > 10 ? 'stock-high'
                               : ((int)$prod['stock'] > 3  ? 'stock-medium'

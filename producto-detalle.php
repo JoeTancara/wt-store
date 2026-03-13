@@ -82,9 +82,10 @@ include __DIR__ . '/views/partials/header_public.php';
       <?php endif; ?>
 
       <!-- Precio -->
+      <!--
       <div style="font-size:2.5rem;font-weight:800;color:var(--accent);font-family:var(--font-mono);margin-bottom:1rem;">
         Bs <?= number_format($prod['precio'], 2) ?>
-      </div>
+      </div> -->
 
       <!-- Stock -->
       <?php
