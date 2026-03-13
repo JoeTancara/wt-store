@@ -2,8 +2,8 @@
 -- SISTEMA CATÁLOGO Y VENTAS 
 -- ============================================================
 
-CREATE DATABASE IF NOT EXISTS catalogo_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE catalogo_db;
+CREATE DATABASE IF NOT EXISTS wtstore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE wtstore;
 
 -- ============================================================
 -- TABLA: usuarios
