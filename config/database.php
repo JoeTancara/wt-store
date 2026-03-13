@@ -5,7 +5,7 @@ define('DB_USER', 'joewt');
 define('DB_PASS', 'technological.world.dev@gmail.com+*+*+*+*+*WT7');
 define('DB_NAME', 'wtstore');
 //define('DB_NAME', 'catalogo_db');
-define('BASE_URL', 'https://store.technologicalworld.website ');
+define('BASE_URL', 'https://store.technologicalworld.website');
 //define('BASE_URL', 'http://localhost/store');
 define('UPLOAD_DIR', __DIR__ . '/../uploads/productos/');
 define('UPLOAD_URL', BASE_URL . '/uploads/productos/');
