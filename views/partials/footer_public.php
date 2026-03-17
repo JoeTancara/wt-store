@@ -1,4 +1,4 @@
-<?php  ?>
+<?php // views/partials/footer_public.php ?>
 <footer class="mt-5 py-4" style="background:var(--bg-secondary);border-top:1px solid var(--border-color);">
   <div class="container text-center">
     <p class="mb-0" style="color:var(--text-muted);font-size:0.85rem;">

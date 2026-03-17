@@ -1,5 +1,5 @@
 <?php
-
+// views/partials/header_admin.php
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../config/auth.php';
@@ -7,7 +7,7 @@ requireLogin();
 $flash = getFlash();
 ?>
 <!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@ $flash = getFlash();
   <link rel="stylesheet" href="<?= BASE_URL ?>/assets/css/style.css">
   <script>
     (function(){
-      var t = localStorage.getItem('theme') || 'dark';
+      var t = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', t);
     })();
     var BASE_URL = '<?= BASE_URL ?>';

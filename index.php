@@ -32,6 +32,7 @@ include __DIR__ . '/views/partials/header_public.php';
         <h1>Descubre nuestros<br>productos destacados</h1>
         <p class="mt-3 mb-4">Explora nuestro catálogo completo con los mejores productos y precios.</p>
         <form method="GET" class="d-flex gap-2" style="max-width:480px;">
+          <?php if ($categoriaId): ?><input type="hidden" name="categoria" value="<?= $categoriaId ?>"><?php endif; ?>
           <div class="search-bar flex-grow-1">
             <i class="bi bi-search search-icon" style="color:rgba(255,255,255,0.6);"></i>
             <input type="text" name="q" class="form-control form-control-lg"
@@ -146,7 +147,7 @@ include __DIR__ . '/views/partials/header_public.php';
             <?php endif; ?>
             <div class="d-flex align-items-end justify-content-between mt-auto pt-2">
               <div>
-                <!-- <div class="product-card-price">Bs <?= number_format($prod['precio'], 2) ?></div> -->
+                <!--<div class="product-card-price">Bs. <?= number_format($prod['precio_venta'] ?? $prod['precio'] ?? 0, 2) ?></div>-->
                 <?php
                   $stockClass = (int)$prod['stock'] > 10 ? 'stock-high'
                               : ((int)$prod['stock'] > 3  ? 'stock-medium'

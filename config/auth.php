@@ -1,4 +1,5 @@
 <?php
+// config/auth.php
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 function isLoggedIn() {
@@ -56,7 +57,7 @@ function redirect($url) {
 }
 
 function formatMoney($amount) {
-    return 'Bs ' . number_format(floatval($amount), 2);
+    return 'Bs. ' . number_format(floatval($amount), 2);
 }
 
 function formatDate($dateStr) {

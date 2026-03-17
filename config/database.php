@@ -1,12 +1,14 @@
 <?php
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'u971224597_joewt');
-define('DB_PASS', 'technological.world.dev@gmail.com+*+*+*+*+*WT7');
-define('DB_NAME', 'u971224597_wtstore');
-//define('DB_NAME', 'catalogo_db');
-define('BASE_URL', 'https://store.technologicalworld.website');
-//define('BASE_URL', 'http://localhost/store');
+define('DB_USER', 'root');
+//define('DB_USER', 'u971224597_joewt');
+define('DB_PASS', '');
+//define('DB_PASS', 'technological.world.dev@gmail.com+*+*+*+*+*WT7');
+//define('DB_NAME', 'u971224597_wtstore');
+define('DB_NAME', 'catalogo_db');
+//define('BASE_URL', 'https://store.technologicalworld.website');
+define('BASE_URL', 'http://localhost/store');
 define('UPLOAD_DIR', __DIR__ . '/../uploads/productos/');
 define('UPLOAD_URL', BASE_URL . '/uploads/productos/');
 define('MAX_IMAGES', 3);
@@ -50,3 +52,7 @@ class Database {
         return $this->connection->insert_id;
     }
 }
+
+
+
+

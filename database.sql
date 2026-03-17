@@ -1,9 +1,9 @@
 -- ============================================================
--- SISTEMA CATÁLOGO Y VENTAS 
+-- SISTEMA CATÁLOGO Y VENTAS — Base de Datos Completa
 -- ============================================================
 
-CREATE DATABASE IF NOT EXISTS wtstore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE wtstore;
+CREATE DATABASE IF NOT EXISTS catalogo_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE catalogo_db;
 
 -- ============================================================
 -- TABLA: usuarios
@@ -37,7 +37,8 @@ CREATE TABLE IF NOT EXISTS productos (
     categoria_id INT NOT NULL,
     nombre VARCHAR(150) NOT NULL,
     descripcion TEXT,
-    precio DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    precio_compra DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    precio_venta DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     stock INT NOT NULL DEFAULT 0,
     estado TINYINT(1) NOT NULL DEFAULT 1,
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -57,6 +58,7 @@ CREATE TABLE IF NOT EXISTS producto_imagenes (
 
 -- ============================================================
 -- TABLA: ventas
+-- estado: 1=activa, 0=anulada
 -- ============================================================
 CREATE TABLE IF NOT EXISTS ventas (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -98,8 +100,9 @@ CREATE TABLE IF NOT EXISTS egresos (
 
 -- ============================================================
 -- DATOS INICIALES
--- Password: password
+-- Password para ambos usuarios: password
 -- ============================================================
 INSERT INTO usuarios (nombre, email, password, rol, estado) VALUES
-('JOE', 'tancarajoe@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 1);
+('JOE', 'tancarajoe@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 1),
+('Vendedor', 'vendedor@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'vendedor', 1);
 

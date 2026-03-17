@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesión - WT Store</title>
+  <title>Iniciar Sesión - TiendaPro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -40,34 +40,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </script>
   <style>
     body {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
+      background: linear-gradient(135deg, var(--accent) 0%, #7c3aed 100%);
     }
-    .login-wrap { width: 100%; max-width: 420px; }
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f1117 100%);
+    }
+    .login-wrap {
+      width: 100%;
+      max-width: 420px;
+    }
     .login-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      padding: 2.5rem 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      padding: 2.25rem 2rem;
     }
-    .login-logo {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-      letter-spacing: -1px;
+    .login-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.25rem;
     }
-    .login-sub { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem; }
+    .login-logo-img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 50%;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+    }
+    .login-sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: 0.2rem;
+    }
+    .input-group-text {
+      background: var(--bg-primary) !important;
+      border-color: var(--border-color) !important;
+      color: var(--text-muted) !important;
+    }
+    /* Responsive: mantener tamaño razonable en movil */
+    @media (max-width: 480px) {
+      .login-card { padding: 1.75rem 1.25rem; }
+      .login-logo-img { width: 160px; height: 160px; }
+    }
   </style>
 </head>
 <body>
 <div class="login-wrap">
   <div class="login-card">
+
+    <!-- Logo -->
+    <div class="login-logo-wrap">
+      <img src="<?= BASE_URL ?>/logo.png"
+           alt="Logo TiendaPro"
+           class="login-logo-img"
+           onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
+      <div id="logoFallback" style="display:none;font-size:2rem;font-weight:800;color:var(--accent);">
+        <i class="bi bi-shop"></i> TiendaPro
+      </div>
+    </div>
+
     <div class="text-center mb-4">
-      <div class="login-logo"><i class="bi bi-shop"></i> WT Store</div>
       <p class="login-sub">Ingresa tus credenciales para continuar</p>
     </div>
 
@@ -101,34 +139,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </button>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary w-100 py-2">
+      <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
         <i class="bi bi-box-arrow-in-right"></i> Iniciar Sesión
       </button>
     </form>
 
     <div class="text-center mt-3">
-      <a href="<?= BASE_URL ?>/index.php" style="font-size:0.85rem;color:var(--text-muted);">
+      <a href="<?= BASE_URL ?>/index.php"
+         style="font-size:0.83rem;color:var(--text-muted);text-decoration:none;">
         <i class="bi bi-arrow-left"></i> Volver al catálogo
       </a>
     </div>
 
     <hr class="divider">
-    <div class="text-center" style="font-size:0.78rem;color:var(--text-muted);">
+    <div class="text-center" style="font-size:0.76rem;color:var(--text-muted);">
       <div class="mt-2">
-        <button class="theme-toggle" type="button"><i class="bi bi-moon-fill"></i> Modo Oscuro</button>
+        <button class="theme-toggle" type="button">
+          <i class="bi bi-moon-fill"></i> Modo Oscuro
+        </button>
       </div>
     </div>
+
   </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= BASE_URL ?>/assets/js/app.js"></script>
 <script>
-function togglePass(){
+function togglePass() {
   var i = document.getElementById('passwordInput');
   var e = document.getElementById('eyeIcon');
-  if(i.type === 'password'){ i.type = 'text';     e.className = 'bi bi-eye-slash'; }
-  else                     { i.type = 'password'; e.className = 'bi bi-eye'; }
+  if (i.type === 'password') { i.type = 'text';     e.className = 'bi bi-eye-slash'; }
+  else                       { i.type = 'password'; e.className = 'bi bi-eye'; }
 }
 </script>
 </body>

@@ -1,5 +1,5 @@
 <?php
-
+// views/partials/sidebar_admin.php
 $currentFile = basename($_SERVER['PHP_SELF']);
 $user = currentUser();
 $initial = strtoupper(substr($user['nombre'], 0, 1));

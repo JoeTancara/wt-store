@@ -82,8 +82,8 @@ include __DIR__ . '/views/partials/header_public.php';
       <?php endif; ?>
 
       <!-- Precio -->
-      <!--
-      <div style="font-size:2.5rem;font-weight:800;color:var(--accent);font-family:var(--font-mono);margin-bottom:1rem;">
+      
+      <!--<div style="font-size:2.5rem;font-weight:800;color:var(--accent);font-family:var(--font-mono);margin-bottom:1rem;">
         Bs <?= number_format($prod['precio'], 2) ?>
       </div> -->
 
@@ -125,10 +125,14 @@ include __DIR__ . '/views/partials/header_public.php';
               <i class="bi bi-cart-plus"></i> Agregar al carrito
             </button>
           </div>-->
+        
         <?php else: ?>
+          <br>
+        <!--
           <a href="<?= BASE_URL ?>/login.php" class="btn btn-primary btn-lg px-4 fw-bold">
             <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión para comprar
-          </a>
+          </a> 
+        -->
         <?php endif; ?>
       <?php else: ?>
         <button class="btn btn-secondary btn-lg px-4" disabled>

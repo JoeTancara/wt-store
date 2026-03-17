@@ -1,4 +1,4 @@
-<?php ?>
+<?php // views/partials/footer_admin.php ?>
   </div><!-- /.admin-content -->
 </div><!-- /.admin-main -->
 </div><!-- /.admin-wrapper -->
