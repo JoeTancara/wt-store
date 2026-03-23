@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar Sesión - TiendaPro</title>
+  <title>Iniciar Sesión</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -97,11 +97,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Logo -->
     <div class="login-logo-wrap">
       <img src="<?= BASE_URL ?>/logo.png"
-           alt="Logo TiendaPro"
+           alt="Logo WT Store"
            class="login-logo-img"
            onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
       <div id="logoFallback" style="display:none;font-size:2rem;font-weight:800;color:var(--accent);">
-        <i class="bi bi-shop"></i> TiendaPro
+        <i class="bi bi-shop"></i> WT Store
       </div>
     </div>
 

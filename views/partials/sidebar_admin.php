@@ -10,8 +10,8 @@ $initial = strtoupper(substr($user['nombre'], 0, 1));
 <aside class="sidebar" id="mainSidebar">
 
   <!-- Brand -->
-  <div class="sidebar-brand">
-    <span class="sidebar-brand-text"><i class="bi bi-shop"></i> WT Store</span>
+  <div class="sidebar-brand" style="justify-content: center; align-items: center; gap: 0.75rem; text-align: center; padding: 1.25rem 1rem;">
+    <img class="sidebar-brand-img" src="<?= BASE_URL ?>/icono.png" alt="WT Store" width="60" height="60"  style="border-radius: 50%;">
     <span class="sidebar-brand-sub">Panel Administrativo</span>
   </div>
 
@@ -51,10 +51,22 @@ $initial = strtoupper(substr($user['nombre'], 0, 1));
     <?php endif; ?>
 
     <?php if (isAdmin()): ?>
+    <div class="sidebar-section">Reportes</div>
+    <a href="<?= BASE_URL ?>/admin/reportes.php"
+       class="sidebar-link <?= $currentFile === 'reportes.php' ? 'active' : '' ?>">
+      <i class="bi bi-bar-chart-line"></i> Reportes
+    </a>
+    <?php endif; ?>
+
+    <?php if (isAdmin()): ?>
     <div class="sidebar-section">Administración</div>
     <a href="<?= BASE_URL ?>/admin/usuarios.php"
        class="sidebar-link <?= $currentFile === 'usuarios.php' ? 'active' : '' ?>">
       <i class="bi bi-people"></i> Usuarios
+    </a>
+    <a href="<?= BASE_URL ?>/admin/configuracion.php"
+       class="sidebar-link <?= $currentFile === 'configuracion.php' ? 'active' : '' ?>">
+      <i class="bi bi-gear"></i> Configuración
     </a>
     <?php endif; ?>
 

@@ -35,7 +35,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <nav class="public-navbar navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand" href="<?= BASE_URL ?>/index.php">
-      <i class="bi bi-shop"></i> WT Store
+      <img src="<?= BASE_URL ?>/icono.png" alt="WT Store" width="50" height="50" style="border-radius: 50%;">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#publicNav"
             aria-controls="publicNav" aria-expanded="false" aria-label="Toggle navigation"
