@@ -263,8 +263,8 @@ include __DIR__ . '/../views/partials/header_admin.php';
         <td>
           <div class="d-flex gap-1 flex-wrap">
             <button class="btn btn-sm btn-outline-info"     onclick="verProducto(<?= $pJson ?>)" title="Ver"><i class="bi bi-eye"></i></button>
-            <button class="btn btn-sm btn-outline-secondary" onclick="abrirStock(<?= (int)$p['id'] ?>,'<?= addslashes(htmlspecialchars($p['nombre'])) ?>',<?= $doc ?>,<?= $uni ?>,<?= $upd ?>)" title="Stock"><i class="bi bi-arrow-repeat"></i></button>
             <?php if (isAdmin()): ?>
+            <button class="btn btn-sm btn-outline-secondary" onclick="abrirStock(<?= (int)$p['id'] ?>,'<?= addslashes(htmlspecialchars($p['nombre'])) ?>',<?= $doc ?>,<?= $uni ?>,<?= $upd ?>)" title="Stock"><i class="bi bi-arrow-repeat"></i></button>
             <button class="btn btn-sm btn-outline-warning"  onclick="abrirColores(<?= (int)$p['id'] ?>,'<?= addslashes(htmlspecialchars($p['nombre'])) ?>')" title="Colores"><i class="bi bi-palette"></i></button>
             <button class="btn btn-sm btn-outline-primary"  onclick="editProducto(<?= $pJson ?>)" title="Editar"><i class="bi bi-pencil"></i></button>
             <button class="btn btn-sm btn-outline-danger"   onclick="eliminarProducto(<?= (int)$p['id'] ?>,'<?= addslashes(htmlspecialchars($p['nombre'])) ?>')" title="Eliminar"><i class="bi bi-trash"></i></button>
@@ -292,7 +292,9 @@ include __DIR__ . '/../views/partials/header_admin.php';
       <div class="modal-body" id="verBody"><div class="text-center py-4"><div class="spinner-border text-primary"></div></div></div>
       <div class="modal-footer">
         <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <?php if (isAdmin()): ?>
         <button class="btn btn-outline-secondary" id="btnVerStock"><i class="bi bi-arrow-repeat"></i> Actualizar Stock</button>
+        <?php endif; ?>
       </div>
     </div>
   </div>
